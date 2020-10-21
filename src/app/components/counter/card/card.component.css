@@ -1,0 +1,10 @@
+mat-card {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+mat-card p {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
