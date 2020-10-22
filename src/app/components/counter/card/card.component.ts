@@ -14,4 +14,11 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  incCount(): void {
+    this.count += 1;
+  }
+
+  resetCount(): void {
+    this.count = 0;
+  }
 }
