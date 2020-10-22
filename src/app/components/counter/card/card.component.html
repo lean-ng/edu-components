@@ -7,7 +7,7 @@
     <p>Current Count: {{ count }}</p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-raised-button (click)="resetCount()">Reset</button>
+    <button mat-raised-button (click)="resetCount()" [disabled]="count === 0">Reset</button>
     <button mat-raised-button color="primary" (click)="incCount()">Increment</button>
   </mat-card-actions>
 </mat-card>
