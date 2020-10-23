@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'counter-card',
@@ -10,6 +10,9 @@ export class CardComponent implements OnInit {
   @Input()
   count = 0;
 
+  @Output()
+  countChanged = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,9 +20,11 @@ export class CardComponent implements OnInit {
 
   incCount(): void {
     this.count += 1;
+    this.countChanged.emit(this.count);
   }
 
   resetCount(): void {
     this.count = 0;
+    this.countChanged.emit(this.count);
   }
 }
