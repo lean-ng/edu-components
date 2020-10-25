@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
   count = 0;
 
   @Output()
-  countChanged = new EventEmitter<number>();
+  countChange = new EventEmitter<number>();
 
   constructor() { }
 
@@ -20,11 +20,11 @@ export class CardComponent implements OnInit {
 
   incCount(): void {
     this.count += 1;
-    this.countChanged.emit(this.count);
+    this.countChange.emit(this.count);
   }
 
   resetCount(): void {
     this.count = 0;
-    this.countChanged.emit(this.count);
+    this.countChange.emit(this.count);
   }
 }

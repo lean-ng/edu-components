@@ -3,7 +3,6 @@
   <div *ngIf="countChanged" class="notification">
     Count updated. New Value: {{ count }}
   </div>
-  <counter-card [count]="count"
-    (countChanged)="countChanged=true; count=$event"
+  <counter-card [(count)]="count"
   ></counter-card>
 </main>
