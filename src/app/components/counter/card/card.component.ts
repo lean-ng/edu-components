@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'counter-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input()
   count = 0;
@@ -15,7 +15,21 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
+  // Called once
+  // Called after first changes hook - if any
   ngOnInit(): void {
+    console.log('Component initialized');
+  }
+
+  // Called each time any input value changes
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Component input data changed');
+    console.log(changes);
+  }
+
+  // Called once
+  ngOnDestroy(): void {
+    console.log('Component will be detroyed');
   }
 
   incCount(): void {

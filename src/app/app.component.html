@@ -1,8 +1,10 @@
 <app-header></app-header>
 <main>
-  <div *ngIf="countChanged" class="notification">
-    Count updated. New Value: {{ count }}
-  </div>
-  <counter-card [(count)]="count"
+  <counter-card *ngIf="counterOn" [(count)]="count"
   ></counter-card>
+  <mat-card class="actions">
+    <button mat-raised-button (click)="count = 0">Reset Counter</button>
+    <button mat-raised-button [disabled]="!counterOn" (click)="counterOn = false">Remove Counter</button>
+    <button mat-raised-button [disabled]="counterOn" (click)="count = 0;counterOn = true">Reinit Counter</button>
+  </mat-card>
 </main>

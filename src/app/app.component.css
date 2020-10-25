@@ -12,3 +12,11 @@ main {
   width: 100%;
   text-align: center;
 }
+
+.actions {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+

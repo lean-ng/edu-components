@@ -5,17 +5,9 @@ import { Component, DoCheck } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements DoCheck {
+export class AppComponent {
 
-  count = 17;
-  countChanged = false;
+  count = 0;
+  counterOn = true;
 
-  private oldCount = 17;
-  ngDoCheck(): void {
-    console.log(this.count);
-    if (this.oldCount !== this.count) {
-      this.countChanged = true;
-      this.oldCount = this.count;
-    }
-  }
 }
