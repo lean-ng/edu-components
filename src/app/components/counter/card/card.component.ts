@@ -27,6 +27,11 @@ export class CardComponent implements OnInit, OnChanges, OnDestroy {
     console.log(changes);
   }
 
+  // Called each time in a change detection run
+  // ngDoCheck(): void {
+  //
+  // }
+
   // Called once
   ngOnDestroy(): void {
     console.log('Component will be detroyed');
